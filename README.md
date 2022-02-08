@@ -1,4 +1,6 @@
-# S3
+# S3 (Simple Storage Service)
+### Amazon's Redundant Storage solution service.
+How to connect:
 - Install `python3-pip`
 - Set alias `python=python3` and check `python --version`
 - Install AWS CLI `sudo pip3 install awscli`
