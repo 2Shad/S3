@@ -5,31 +5,42 @@ def create_bucket(bucket_name, location):
 
 
 def delete_bucket(bucket_name):
-    decision = input('Do you want to use the default "eng103a-shadman-test" bucket? (y/N) ').lower()
+    decision = input('Do you want to use the default "eng103a-shadman-test" bucket? (y/N): ').lower()
     if decision == 'n':
-        bucket_name = input("what bucket do you want to create?\n")
+        bucket_name = input("what bucket do you want to delete?\n")
     s3.Bucket(bucket_name).delete()
 
 
 def upload_file(bucket_name):
+    decision = input('Do you want to use the default "eng103a-shadman-test" bucket? (y/N): ').lower()
+    if decision == 'n':
+        bucket_name = input("what bucket do you want use?\n")
     file_name = input("What file do you want to upload?\n")
-    destinationfile = file_name.copy()
-    decision = input("Would you like to change the destination file name? (y/N) "):
+    decision = input("Would you like to change the destination file name? (y/N): ").lower()
     if decision == 'y':
         destinationfile = input("What do you want to name the destination file?\n")
+    else:
+        destinationfile = file_name
     s3.Bucket(bucket_name).upload_file(file_name, destinationfile)
 
 
 def download_file(bucket_name):
+    decision = input('Do you want to use the default "eng103a-shadman-test" bucket? (y/N): ').lower()
+    if decision == 'n':
+        bucket_name = input("what bucket do you want use?\n")
     file_name = input("What file do you want to download?\n")
-    destinationfile = file_name.copy()
-    decision = input("Would you like to change the destination file name? (y/N) "):
+    decision = input("Would you like to change the destination file name? (y/N): ").lower()
     if decision == 'y':
         destinationfile = input("What do you want to name the destination file?\n")
+    else:
+        destinationfile = file_name
     s3.Bucket(bucket_name).download_file(file_name, destinationfile)
 
 
 def delete_file(bucket_name):
+    decision = input('Do you want to use the default "eng103a-shadman-test" bucket? (y/N): ').lower()
+    if decision == 'n':
+        bucket_name = input("what bucket do you want use?\n")
     file_name = input("What file do you want to delete?\n")
     s3.Object(bucket_name, file_name).delete()
 
