@@ -18,10 +18,10 @@ def upload_file(bucket_name):
     file_name = input("What file do you want to upload?\n")
     decision = input("Would you like to change the destination file name? (y/N): ").lower()
     if decision == 'y':
-        destinationfile = input("What do you want to name the destination file?\n")
+        destination_file = input("What do you want to name the destination file?\n")
     else:
-        destinationfile = file_name
-    s3.Bucket(bucket_name).upload_file(file_name, destinationfile)
+        destination_file = file_name
+    s3.Bucket(bucket_name).upload_file(file_name, destination_file)
 
 
 def download_file(bucket_name):
@@ -31,10 +31,10 @@ def download_file(bucket_name):
     file_name = input("What file do you want to download?\n")
     decision = input("Would you like to change the destination file name? (y/N): ").lower()
     if decision == 'y':
-        destinationfile = input("What do you want to name the destination file?\n")
+        destination_file = input("What do you want to name the destination file?\n")
     else:
-        destinationfile = file_name
-    s3.Bucket(bucket_name).download_file(file_name, destinationfile)
+        destination_file = file_name
+    s3.Bucket(bucket_name).download_file(file_name, destination_file)
 
 
 def delete_file(bucket_name):
