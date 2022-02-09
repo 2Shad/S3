@@ -1,11 +1,13 @@
 # S3 (Simple Storage Service)
 S3 is Amazon's storage service that is Highly available, scalable and redundant replicating your data in 3 locations, at reasonable prices with their different tiers. It is generally used to store data that would be displayed in web, and for backup in case of a disaster.
 
+
 ### S3 Storage Classes
 - Standard (General purpose)
 - Intelligent-Tiering (Unknown or changing access)
 - Standard-IA (Infrequent access)
 - Glacier (Archive)
+
 
 ![S3](S3.png)
 
