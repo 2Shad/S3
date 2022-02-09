@@ -1,15 +1,17 @@
 # S3 (Simple Storage Service)
-### Amazon's Redundant Storage solution service.
+### Amazon's S3 service offers Highly avaliable, scalable and redundent storage, at reasonable prices with their different tiers. It is generally used to store data that would be displayed in web, and for backup in case of a disaster.
+
+![S3](S3.png)
+
+## AWS-CLI
+
 How to connect:
 - Install `python3-pip`
 - Set alias `python=python3` and check `python --version`
 - Install AWS CLI `sudo pip3 install awscli`
 - Configure AWS CLI, `aws configure` enter keys, and region is `eu-west-1` and `json` format.
 - Check and verify connection with `aws s3 ls`
-  
-![S3](S3.png)
 
-## AWS-CLI
 
 How to use AWS-CLI:
 - To **Create** a bucket `aws s3 mb s3://{bucket-name}` *Note: bucket names cannot have `_` or caps*
